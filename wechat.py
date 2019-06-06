@@ -13,7 +13,7 @@ def callback():
         nonce = request.args.get("nonce")
         echostr = request.args.get("echostr")
         timestamp = request.args.get("timestamp")
-        token = request.args.get("token")
+        token = "123456aabcdefg"
         print(signature, nonce, echostr, timestamp, token)
         li = [token, timestamp, echostr]
         li.sort()
