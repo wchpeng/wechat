@@ -16,6 +16,9 @@ def callback():
         token = "123456aabcdefg"
         print(signature, nonce, echostr, timestamp, token)
         li = [token, timestamp, echostr]
+        if not all(li):
+            print("li has none")
+            return ""
         li.sort()
 
         sha1 = hashlib.sha1()
