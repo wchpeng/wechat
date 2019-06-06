@@ -1,4 +1,4 @@
-from hashlib import sha1
+import hashlib
 
 from flask import Flask, request
 
@@ -20,8 +20,9 @@ def callback():
             print("li has none")
             return ""
         li.sort()
-
-        hashcode = sha1.update("".join(li)).hexdigest()
+        sha1 = hashlib.sha1()
+        sha1.update("".join(li).encode(encoding="utf-8"))
+        hashcode = sha1.hexdigest()
         print("hashcode, signature: ", hashcode, signature)
         if hashcode == signature:
             return echostr
