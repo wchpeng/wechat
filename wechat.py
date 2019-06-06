@@ -15,7 +15,7 @@ def callback():
         timestamp = request.args.get("timestamp")
         token = "123456aabcdefg"
         print(signature, nonce, echostr, timestamp, token)
-        li = [token, timestamp, echostr]
+        li = [token, timestamp, nonce]
         if not all(li):
             print("li has none")
             return ""
