@@ -1,0 +1,2 @@
+# wechat
+for wechat develop
